@@ -1,0 +1,41 @@
+<app-section-container>
+  <span class="title-wrapper">
+    配置
+  </span>
+  <span class="content-wrapper">
+    <div class="buttons">
+      <div class="button"
+        [class.active]="type==='input'"
+        (click)="type='input'">自定义脚本</div>
+      <div class="button"
+        [class.active]="type==='file'"
+        (click)="type='file'">从文件载入脚本</div>
+    </div>
+    <textarea *ngIf="type==='input'"
+      row="10"
+      placeholder="自定义脚本"
+      nz-input></textarea>
+    <nz-upload *ngIf="type==='file'"
+      nzAction="https://jsonplaceholder.typicode.com/posts/">
+      <button nz-button>
+        <i class="anticon anticon-upload"></i>
+        <span>选择文件</span>
+      </button>
+    </nz-upload>
+  </span>
+</app-section-container>
+
+<app-section-container>
+  <span class="title-wrapper">
+    磁盘
+  </span>
+  <span class="content-wrapper">
+    分区方式
+    <nz-radio-group>
+      <label nz-radio
+        nzValue="A">自动</label>
+      <label nz-radio
+        nzValue="B">手动</label>
+    </nz-radio-group>
+  </span>
+</app-section-container>

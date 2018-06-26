@@ -1,0 +1,49 @@
+<div class="page-wrapper">
+  <div class="steps-header">
+    <nz-steps nzSize="small"
+      [nzCurrent]="index">
+      <nz-step nzTitle="基础配置 （必填）"></nz-step>
+      <nz-step nzTitle="网络和安全组（必填）"></nz-step>
+      <nz-step nzTitle="系统配置"></nz-step>
+      <nz-step nzTitle="运行后"></nz-step>
+    </nz-steps>
+  </div>
+
+  <div class="steps-content"
+    [ngSwitch]="index">
+    <div class="cotent-wrapper base-wrapper"
+      *ngSwitchCase="0">
+      <app-base></app-base>
+    </div>
+    <div class="cotent-wrapper"
+      *ngSwitchCase="1">
+      <app-net></app-net>
+    </div>
+    <div class="cotent-wrapper"
+      *ngSwitchCase="2">
+      <app-system></app-system>
+    </div>
+    <div class="cotent-wrapper"
+      *ngSwitchCase="3">
+      <app-config></app-config>
+    </div>
+
+  </div>
+  <div class="steps-actions">
+    <button nz-button
+      (click)="pre()"
+      *ngIf="index">上一步</button>
+    <button nz-button
+      nzType="primary"
+      *ngIf="index!==3"
+      (click)="next()">
+      下一步
+    </button>
+    <button nz-button
+      nzType="primary"
+      *ngIf="index===3"
+      (click)="done()">
+      完成
+    </button>
+  </div>
+</div>

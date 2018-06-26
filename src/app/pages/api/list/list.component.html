@@ -1,0 +1,22 @@
+<div appPageBody>
+  <app-page-title>
+    访问API
+  </app-page-title>
+  <nz-table #rowSelectionTable
+    [nzData]="dataSet"
+    [nzShowSizeChanger]="true"
+    [nzBordered]="true">
+    <thead>
+      <tr>
+        <th>描述</th>
+        <th>大小</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of rowSelectionTable.data">
+        <td>{{data.name}}</td>
+        <td>{{data.url}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

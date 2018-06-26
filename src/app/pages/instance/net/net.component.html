@@ -1,0 +1,38 @@
+<section>
+  <div class="left-side">
+    <i class="anticon anticon-global"></i>
+    <span>网络</span>
+  </div>
+  <div class="content-wrapper ">
+    <nz-transfer [nzDataSource]="list"
+      [nzTitles]="['可用的网络', '已选择的网络']"
+      (nzSelectChange)="select($event)"
+      (nzChange)="change($event)">
+    </nz-transfer>
+  </div>
+</section>
+<section>
+  <div class="left-side">
+    <i class="anticon anticon-global"></i>
+    <span>网络端口</span>
+  </div>
+  <div class="content-wrapper port-wrapper">
+    <h4>
+      <span>无可用端口</span>
+      <i class="anticon anticon-question-circle"></i>
+    </h4>
+    <div class="desc">
+      <span>端口是连接单个设备（例如实例的NIC）到虚拟网络的接入点。</span>
+      <br>
+      <span>端口同样描述了相关联的网络配置，比如那个端口上可用的MAC和IP地址。</span>
+      <br>
+      <span>端口是可选的，可用被网络使用添加外部IP地址到实例或者选择指定端口类型。</span>
+    </div>
+    <h4>
+      <span>安全组</span>
+      <i class="anticon anticon-question-circle"></i>
+      <label nz-checkbox
+        [(ngModel)]="checked">default</label>
+    </h4>
+  </div>
+</section>

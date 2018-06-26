@@ -1,0 +1,68 @@
+<section>
+  <div class="left-side">
+    <i class="anticon anticon-global"></i>
+    <span>访问与安全</span>
+  </div>
+  <div class="content-wrapper">
+    <div class="buttons">
+      <div class="button"
+        [class.active]="type==='keypairs'"
+        (click)="type='keypairs'">秘钥对</div>
+      <div class="button"
+        [class.active]="type==='password'"
+        (click)="type='password'">密码</div>
+    </div>
+
+    <div class="form-wrapper"
+      [ngSwitch]="type">
+      <form nz-form
+        [nzLayout]="'inline'"
+        *ngSwitchCase="'keypairs'">
+        <nz-form-item>
+          <nz-form-label nzFor="keypairs">秘钥对</nz-form-label>
+          <nz-form-control>
+            <nz-select style="width: 200px;"
+              nzAllowClear
+              nzPlaceHolder="Choose">
+              <nz-option nzValue="jack"
+                nzLabel="Jack"></nz-option>
+              <nz-option nzValue="lucy"
+                nzLabel="Lucy"></nz-option>
+              <nz-option nzValue="disabled"
+                nzLabel="Disabled"
+                nzDisabled></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+      <form nz-form
+        [nzLayout]="'inline'"
+        *ngSwitchCase="'password'">
+        <nz-form-item>
+          <nz-form-label nzFor="password">管理员密码</nz-form-label>
+          <nz-form-control>
+            <input nz-input
+              name="password"
+              type="password"
+              id="password">
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="password">确认管理员密码</nz-form-label>
+          <nz-form-control>
+            <input nz-input
+              name="confirm"
+              type="password"
+              id="confirm">
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+
+    </div>
+
+    <div class="desc">
+      通过密钥对其它机制来控制访问您实例的权限
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,42 @@
+.volume {
+  display: flex;
+  .left {
+    background-color: #1890ff;
+    min-width: 100px;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    max-height: 40px;
+    width: 10%;
+  }
+  .middle {
+    line-height: 30px;
+    margin: 10px;
+    width: 40%;
+    .deep {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .length {
+      min-width: 200px;
+    }
+    .horizontally {
+      display: flex;
+      justify-content: space-between;
+      div {
+        width: 48%;
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    background-color: yellowgreen;
+  }
+}
+
+.style {
+  min-width: 520px;
+  padding: 3px;
+  background-color: red;
+}

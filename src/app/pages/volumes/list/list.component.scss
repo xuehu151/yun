@@ -1,0 +1,26 @@
+[nz-carousel-content] {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  color: #fff;
+  overflow: hidden;
+  div {
+    width: 100%;
+  }
+  .content1 {
+    background: red;
+  }
+  .content2 {
+    background: blue;
+  }
+  .content3 {
+    background: yellow;
+  }
+  .content4 {
+    background: green;
+  }
+  .content5 {
+    background: yellowgreen;
+  }
+}

@@ -1,0 +1,33 @@
+span {
+  display: inline-block;
+}
+
+.title-wrapper {
+  width: 200px;
+  padding: 0 20px;
+}
+
+.content-wrapper {
+  width: calc(100% - 200px);
+  text-align: left;
+}
+
+.buttons {
+  overflow: hidden;
+  margin: 0 0 24px 0;
+  .button {
+    width: 105px;
+    height: 32px;
+    margin: 0 8px 0 0;
+    border: 1px solid #CACACA;
+    float: left;
+    line-height: 32px;
+    text-align: center;
+    color: #bfbfbf;
+    &.active {
+      background: #589EDC;
+      color: white;
+      border: 1px solid #589EDC;
+    }
+  }
+}

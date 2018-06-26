@@ -1,0 +1,50 @@
+<app-modal-body>
+  <form nz-form
+    class="form-wrapper"
+    [formGroup]="form">
+    <nz-form-item>
+      <nz-form-label>
+        卷名称
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input
+          type="text"
+          formControlName="name">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>
+        当前大小（GiB）
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input
+          type="text"
+          formControlName="name">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>
+        新大小（GiB）
+      </nz-form-label>
+      <nz-form-control>
+        <input nz-input
+          type="text"
+          formControlName="name">
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <div class="right-side">
+    <h2>说明：</h2>
+    <span>扩展卷的大小</span>
+    <h2>卷限度</h2>
+    <app-progress [totle]="1000"
+      [value]="10"
+      [newValue]=""
+      title="总大小（GB）"
+      desc="已使用"></app-progress>
+  </div>
+</app-modal-body>
+<app-modal-footer [disabled]="!form.valid"
+  (ok)="onOk()"
+  (cancel)="onCancel()">
+</app-modal-footer>

@@ -1,0 +1,137 @@
+<nz-layout>
+    <nz-header>
+        <h1> {{"hello"| translate }} </h1>
+        <div class="logo">
+            <span>Openstack Yun</span>
+        </div>
+
+        <div class="internal">
+            <nz-select style="width: 120px;margin-right: 8px;" #langSelect (change)="changeLang(langSelect.value)" [(ngModel)]="selectedValue">
+                <nz-option nzValue="{{lang}}" nzLabel="{{lang}}" *ngFor="let lang of translateService.getLangs()"></nz-option>
+            </nz-select>
+        </div>
+        <ul nz-menu
+            [nzMode]="'horizontal'">
+            <li nz-menu-item>nav 1</li>
+            <li nz-menu-item>nav 2</li>
+            <li nz-menu-item>nav 3</li>
+        </ul>
+    </nz-header>
+    <nz-layout>
+        <nz-sider *ngIf="(auth$ | async)?.user"
+                  nzCollapsible
+                  [(nzCollapsed)]="isCollapsed"
+                  [nzWidth]="width">
+            <ul nz-menu
+                [nzTheme]="'light'"
+                [nzMode]="'inline'"
+                [nzInlineCollapsed]="isCollapsed">
+                <li nz-submenu>
+          <span title>
+            <i class="anticon anticon-user"></i>
+            <span class="nav-text">计算</span>
+          </span>
+                    <ul>
+                        <li nz-menu-item>
+                            <a [routerLink]="['/overview']">
+                                概况
+                            </a>
+                        </li>
+                        <li nz-menu-item>
+                            <a [routerLink]="['/instance']">
+                                实例
+                            </a>
+                        </li>
+                        <li nz-menu-item>
+                            <a [routerLink]="['/volumes']">卷</a>
+                        </li>
+                        <li nz-menu-item>
+                            <a [routerLink]="['/images']">镜像</a>
+                        </li>
+                        <li nz-menu-item>
+                            <a [routerLink]="['/keypairs']">
+                                秘钥对
+                            </a>
+                        </li>
+                        <li nz-menu-item>
+                            <a [routerLink]="['/api']">
+                                访问API
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+          <span title>
+            <i class="anticon anticon-team"></i>
+            <span class="nav-text">Container</span>
+          </span>
+                    <ul>
+                        <li nz-menu-item>Clusters</li>
+                        <li nz-menu-item>Clusters Templates</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+          <span title>
+            <i class="anticon anticon-team"></i>
+            <span class="nav-text">网络</span>
+          </span>
+                    <ul>
+                        <li nz-menu-item>网络拓扑</li>
+                        <li nz-menu-item>网络</li>
+                        <li nz-menu-item>路由</li>
+                        <li nz-menu-item>安全组</li>
+                        <li nz-menu-item>Load Balancers</li>
+                        <li nz-menu-item>浮动IP</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+          <span title>
+            <i class="anticon anticon-team"></i>
+            <span class="nav-text">云编排</span>
+          </span>
+                    <ul>
+                        <li nz-menu-item>栈</li>
+                        <li nz-menu-item>资源类型</li>
+                        <li nz-menu-item>模板版本</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+          <span title>
+            <i class="anticon anticon-team"></i>
+            <span class="nav-text">系统</span>
+          </span>
+                    <ul>
+                        <li nz-menu-item>概况</li>
+                        <li nz-menu-item>虚拟机管理器</li>
+                        <li nz-menu-item>主机聚合</li>
+                        <li nz-menu-item>实例</li>
+                        <li nz-menu-item>卷</li>
+                        <li nz-menu-item>实例类型</li>
+                        <li nz-menu-item>镜像</li>
+                        <li nz-menu-item>网络</li>
+                        <li nz-menu-item>路由</li>
+                        <li nz-menu-item>浮动IP</li>
+                        <li nz-menu-item>默认值</li>
+                        <li nz-menu-item>源数据定义</li>
+                        <li nz-menu-item>系统信息</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+          <span title>
+            <i class="anticon anticon-team"></i>
+            <span class="nav-text">身份管理</span>
+          </span>
+                    <ul>
+                        <li nz-menu-item>项目</li>
+                        <li nz-menu-item>用户</li>
+                        <li nz-menu-item>组</li>
+                        <li nz-menu-item>角色</li>
+                    </ul>
+                </li>
+            </ul>
+        </nz-sider>
+        <nz-content>
+            <router-outlet></router-outlet>
+        </nz-content>
+    </nz-layout>
+</nz-layout>

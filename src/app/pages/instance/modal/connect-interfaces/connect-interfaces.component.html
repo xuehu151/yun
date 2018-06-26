@@ -1,0 +1,23 @@
+<app-modal-body>
+  <form class="form-wrapper"
+    nz-form
+    [formGroup]="form">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6"
+        nzFor="name">网络</nz-form-label>
+      <nz-form-control [nzSpan]="16">
+        <nz-select formControlName="network"
+          nzPlaceHolder="选择网络">
+          <nz-option nzValue="k8snet"
+            nzLabel="k8snet"></nz-option>
+          <nz-option nzValue="provider"
+            nzLabel="provider"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</app-modal-body>
+<app-modal-footer [disabled]="!form.valid"
+  (ok)="onOk()"
+  (cancel)="onCancel()">
+</app-modal-footer>

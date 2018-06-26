@@ -1,0 +1,48 @@
+<section class="login-page">
+  <div class="login-wrapper">
+    <div class="logo-wrapper">
+      <img src="./assets/imgs/logo.png"
+        alt="">
+      <span>openstack</span>
+    </div>
+    <form nz-form
+      [formGroup]="form"
+      (submit)="onSubmit(form)">
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="anticon anticon-user">
+            <input type="text"
+              nz-input
+              formControlName="username"
+              placeholder="用户名">
+          </nz-input-group>
+          <nz-form-explain *ngIf="form.get('username').dirty && form.get('username').errors">Please input your username!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="anticon anticon-lock">
+            <input type="password"
+              nz-input
+              formControlName="password"
+              placeholder="密码">
+          </nz-input-group>
+          <nz-form-explain *ngIf="form.get('password').dirty && form.get('password').errors">Please input your Password!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+
+        <!-- <a class="login-form-forgot">Forgot password</a> -->
+        <div class="buttons-wrapper">
+          <button type="button"
+            nz-button
+            [nzType]="'default'">注册</button>
+          <button type="submit"
+            nz-button
+            [nzType]="'primary'">登录</button>
+        </div>
+      </nz-form-item>
+    </form>
+  </div>
+</section>

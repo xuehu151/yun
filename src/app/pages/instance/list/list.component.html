@@ -1,0 +1,131 @@
+<div class="page-wrapper">
+  <app-page-title>
+    实例
+  </app-page-title>
+  <div appTableOptionGroup>
+    <nz-dropdown [nzDisabled]="selection.selected.length <= 0">
+      <button nz-button
+        nz-dropdown>
+        <span>更多操作</span>
+        <i class="anticon anticon-down"></i>
+      </button>
+      <ul nz-menu>
+        <li nz-menu-item>
+          <a>重启实例</a>
+        </li>
+        <li nz-menu-item>
+          <a>关闭实例</a>
+        </li>
+        <li nz-menu-item>
+          <a>软重启实例</a>
+        </li>
+      </ul>
+    </nz-dropdown>
+    <button nz-button
+      nzType="danger"
+      (click)="onRemoveAll(selection.selected)"
+      [disabled]="selection.selected.length <= 0">
+      <i class="anticon anticon-delete"></i>
+      删除实例
+    </button>
+    <button nz-button
+      nzType="default"
+      (click)="onCreateInstance()">
+      <i class="anticon anticon-plus"></i>
+      创建实例
+    </button>
+    <nz-input-group nzSuffixIcon="anticon anticon-search">
+      <input type="text"
+        nz-input
+        placeholder="筛选">
+    </nz-input-group>
+  </div>
+  <nz-table #rowSelectionTable
+    [nzData]="instance$ | async"
+    [nzShowSizeChanger]="true"
+    [nzBordered]="true"
+    (nzCurrentPageDataChange)="currentPageDataChange(rowSelectionTable.data)"
+    (nzPageIndexChange)="selection.clear()"
+    (nzPageSizeChange)="selection.clear()">
+    <thead nzSingleSort
+      (nzSortChange)="sort($event)">
+      <tr>
+        <th nzShowCheckbox
+          [nzChecked]="selection.hasValue() && isAllSelected()"
+          [nzIndeterminate]="selection.hasValue() && !isAllSelected()"
+          (nzCheckedChange)="masterToggle($event)">
+        </th>
+        <th nzShowSort
+          nzSortKey="name">
+          实例名称
+        </th>
+        <th>镜像名称</th>
+        <th>IP 地址</th>
+        <th>实例类型</th>
+        <th>密钥对</th>
+        <th>状态</th>
+        <th>可用域</th>
+        <th>任务</th>
+        <th>电源状态</th>
+        <th>创建后的时间</th>
+        <th>动作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of rowSelectionTable.data">
+        <td nzShowCheckbox
+          [nzChecked]="selection.isSelected(data)"
+          (nzCheckedChange)="selection.toggle(data)"></td>
+        <td>
+          <a (click)="goDetail(data.id,0)">{{data.name}}</a>
+        </td>
+        <td>{{data.image.id}}</td>
+        <td>{{data.addresses}}</td>
+        <td>{{data.flavor.id}}</td>
+        <td>{{data.keyName}}</td>
+        <td>{{data.status}}</td>
+        <td>{{data.availabilityZone}}</td>
+        <td>{{data.taskState}}</td>
+        <td>{{data.powerState}}</td>
+        <td>{{data.created}}</td>
+        <td>
+          <nz-dropdown-button (nzClick)="onCreateSnapshot(data)"
+            nzTrigger="click">
+            创建快照
+            <ul nz-menu>
+              <li nz-menu-item>绑定浮动IP</li>
+              <li nz-menu-item
+                (click)="onConnectInterface()">连接接口</li>
+              <li nz-menu-item
+                (click)="disConnectInterface()">分离接口</li>
+              <li nz-menu-item
+                (click)="editInstance()">编辑实例</li>
+              <li nz-menu-item
+                (click)="onConnectVolumes()">连接卷</li>
+              <li nz-menu-item
+                (click)="disConnectVolumes()">分离卷</li>
+              <li nz-menu-item
+                (click)="updateMetadata()">更新元数据</li>
+              <li nz-menu-item
+                (click)="editSecurityGroups()">编辑安全组</li>
+              <li nz-menu-item>控制台</li>
+              <li nz-menu-item>查看日志</li>
+              <li nz-menu-item>暂停实例</li>
+              <li nz-menu-item>挂起实例</li>
+              <li nz-menu-item>废弃实例</li>
+              <li nz-menu-item>调整实例大小</li>
+              <li nz-menu-item>锁定实例</li>
+              <li nz-menu-item>解锁实例</li>
+              <li nz-menu-item>软重启实例</li>
+              <li nz-menu-item>硬重启实例</li>
+              <li nz-menu-item>关闭实例</li>
+              <li nz-menu-item>重建实例</li>
+              <li nz-menu-item
+                (click)="onRemove(data)">删除实例</li>
+            </ul>
+          </nz-dropdown-button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

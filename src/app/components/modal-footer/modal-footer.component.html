@@ -1,0 +1,10 @@
+<div class="modal-footer">
+  <button nz-button
+    (click)="onCancel()">{{cancelText || '取消'}}</button>
+  <button class="button-ok"
+    nz-button
+    (click)="onOk()"
+    [disabled]="disabled"
+    nzType="primary">{{okText || '确定'}}</button>
+  <ng-content></ng-content>
+</div>

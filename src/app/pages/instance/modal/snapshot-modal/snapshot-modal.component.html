@@ -1,0 +1,23 @@
+<app-modal-body>
+  <form class="form-wrapper"
+    nz-form
+    [formGroup]="form">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6"
+        nzFor="name">快照名称</nz-form-label>
+      <nz-form-control [nzSpan]="16">
+        <input nz-input
+          name="name"
+          type="text"
+          formControlName="name">
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <div class="right-side">
+
+  </div>
+</app-modal-body>
+<app-modal-footer [disabled]="!form.valid"
+  (cancel)="onCancel()"
+  (ok)="onOk()">
+</app-modal-footer>

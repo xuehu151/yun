@@ -1,0 +1,56 @@
+<div appPageBody>
+  <app-page-title>
+    镜像
+  </app-page-title>
+  <nz-table #rowSelectionTable [nzData]="dataSet$ | async" [nzShowSizeChanger]="true" [nzBordered]="true" (nzCurrentPageDataChange)="currentPageDataChange(rowSelectionTable.data)"
+    (nzPageIndexChange)="selection.clear()" (nzPageSizeChange)="selection.clear()">
+    <thead nzSingleSort (nzSortChange)="sort($event)">
+      <tr>
+        <th nzShowCheckbox [nzChecked]="selection.hasValue() && isAllSelected()" [nzIndeterminate]="selection.hasValue() && !isAllSelected()"
+          (nzCheckedChange)="masterToggle($event)">
+        </th>
+        <th>所有者</th>
+        <th nzShowSort nzSortKey="name">
+          名称
+        </th>
+        <th>类型</th>
+        <th>状态</th>
+        <th>可见性</th>
+        <th>受保护的</th>
+        <th>磁盘格式</th>
+        <th>大小</th>
+        <th>动作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of rowSelectionTable.data">
+        <td nzShowCheckbox [nzChecked]="selection.isSelected(data)" (nzCheckedChange)="selection.toggle(data)"></td>
+        <td>
+          {{data.owner}}
+        </td>
+        <td>
+          <a href="">{{data.name}}</a>
+        </td>
+        <td>
+
+        </td>
+        <td>{{data.status}}</td>
+        <td>{{data.isPublic}}</td>
+        <td>{{data.isProtected}}</td>
+        <td>{{data.diskFormat}}</td>
+        <td>{{data.size}}</td>
+        <td>
+          <nz-dropdown-button nzTrigger="click">
+            启动
+            <ul nz-menu>
+              <li nz-menu-item (click)="createVolume()">创建卷</li>
+              <li nz-menu-item>编辑镜像</li>
+              <li nz-menu-item>更新元数据</li>
+              <li nz-menu-item>删除镜像</li>
+            </ul>
+          </nz-dropdown-button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

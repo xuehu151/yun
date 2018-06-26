@@ -1,0 +1,15 @@
+<div class="progress-content">
+  <div class="desc-wrapper">
+    <div class="title">{{title}}</div>
+    <div class="details">{{desc + value+'/'+totle}}</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar"
+      [ngStyle]="{'width':(value/totle)*100+'%'}"></div>
+    <div class="progress-new"
+      [ngClass]="{'success':(totle - value -newValue) >= (0.1*totle),
+      'warning':(totle - value -newValue) < (0.1*totle)&& (totle - value -newValue) >= 0,
+      'error':(totle - value -newValue) < 0 }"
+      [ngStyle]="{'width':(newValue/totle)*100+'%'}"></div>
+  </div>
+</div>

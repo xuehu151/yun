@@ -1,0 +1,70 @@
+<app-page-title>
+  秘钥对
+</app-page-title>
+
+
+<div appTableOptionGroup>
+  <button nz-button
+    nzType="danger">
+    <i class="anticon anticon-delete"></i>
+    删除秘钥对
+  </button>
+  <button nz-button
+    nzType="default">
+    <i class="anticon anticon-cloud-upload-o"></i>
+    导入秘钥对
+  </button>
+  <button nz-button
+    nzType="default">
+    <i class="anticon anticon-plus"></i>
+    创建秘钥对
+  </button>
+  <nz-input-group nzSuffixIcon="anticon anticon-search">
+    <input type="text"
+      nz-input
+      placeholder="筛选">
+  </nz-input-group>
+</div>
+
+<nz-table #rowSelectionTable
+  [nzData]="dataSet$ | async"
+  [(nzPageSize)]="pageSize"
+  [nzShowSizeChanger]="true"
+  [nzBordered]="true"
+  (nzCurrentPageDataChange)="currentPageDataChange(rowSelectionTable.data)"
+  (nzPageIndexChange)="selection.clear()"
+  (nzPageSizeChange)="selection.clear()">
+  <thead nzSingleSort
+    (nzSortChange)="sort($event)">
+    <tr>
+      <th nzShowCheckbox
+        [nzChecked]="selection.hasValue() && isAllSelected()"
+        [nzIndeterminate]="selection.hasValue() && !isAllSelected()"
+        (nzCheckedChange)="masterToggle($event)">
+      </th>
+      <th nzShowSort
+        nzSortKey="name">
+        密钥对名称
+      </th>
+      <th>指纹</th>
+      <th>动作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+      <td nzShowCheckbox
+        [nzChecked]="selection.isSelected(data)"
+        (nzCheckedChange)="selection.toggle(data)"></td>
+      <td>
+        <a href="">{{data.name}}</a>
+      </td>
+      <td>{{data.fingerprint}}</td>
+      <td>
+        <button nz-button
+          nzType="danger">
+          删除秘钥对
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

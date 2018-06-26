@@ -1,0 +1,38 @@
+<div class="volume">
+  <div class="left">卷详情</div>
+
+  <div class="middle">
+    <span>卷是可以附加到实例的块设备。</span>
+    <br/>
+    <span class="deep">名称*</span>
+    <input class="length" nz-input [(ngModel)]="data.name">
+    <span class="deep">描述</span>
+    <input class="length" nz-input [(ngModel)]="data.describe">
+    <span class="deep">使用镜像作为源</span>
+    <br />
+    <nz-input-number class="length" [nzDisabled]='true' [(ngModel)]="data.source"></nz-input-number>
+    <div class="horizontally">
+      <div>
+        <span class="deep">类型</span>
+        <br />
+        <nz-select style="width: 100%" nzShowSearch [(ngModel)]="data.type">
+          <nz-option nzLabel="{{data.type}}" nzValue="{{data.type}}"></nz-option>
+        </nz-select>
+      </div>
+      <div>
+        <span class="deep">大小(GB)*</span>
+        <br />
+        <nz-input-number style="width: 100%" [(ngModel)]="data.size" [nzMin]="1" [nzStep]="1"></nz-input-number>
+      </div>
+    </div>
+    <span class="deep">可用域*</span>
+    <br />
+    <nz-select class="length" nzShowSearch [(ngModel)]="data.domain">
+      <nz-option nzLabel="{{data.domain}}" nzValue="{{data.domain}}"></nz-option>
+    </nz-select>
+  </div>
+  <div class="right">
+    <span>卷和快照配额(GB)(最大1000)</span>
+  </div>
+
+</div>

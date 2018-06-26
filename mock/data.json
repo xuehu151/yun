@@ -1,0 +1,422 @@
+{
+  "users": [
+    {
+      "password": "123456",
+      "name": "李四",
+      "avatar": "avatars:svg-1",
+      "email": "adb@qq.com",
+      "username": "lisi"
+    }
+  ],
+  "catalogs": [
+    {
+      "name": "计算",
+      "url": "",
+      "open": true,
+      "children": [
+        {
+          "name": "概况",
+          "url": "/overview",
+          "id": 0
+        },
+        {
+          "name": "实例",
+          "url": "/instance",
+          "id": 1
+        },
+        {
+          "name": "卷",
+          "url": "/volumes",
+          "id": 2
+        },
+        {
+          "name": "镜像",
+          "url": "/images",
+          "id": 3
+        },
+        {
+          "name": "秘钥对",
+          "url": "/keypairs",
+          "id": 4
+        }
+      ]
+    }
+  ],
+  "overview": [
+    {
+      "name": "实例",
+      "use": 2,
+      "total": 10,
+      "unit": ""
+    },
+    {
+      "name": "VCPU数量",
+      "use": 1,
+      "total": 20,
+      "unit": ""
+    },
+    {
+      "name": "内存",
+      "use": 10,
+      "total": 100,
+      "unit": "GB"
+    },
+    {
+      "name": "浮动IP",
+      "use": 2,
+      "total": 50,
+      "unit": ""
+    },
+    {
+      "name": "安全组",
+      "use": 1,
+      "total": 10,
+      "unit": ""
+    },
+    {
+      "name": "卷",
+      "use": 4,
+      "total": 20,
+      "unit": ""
+    },
+    {
+      "name": "卷存储",
+      "use": 400,
+      "total": 2000,
+      "unit": "GB"
+    }
+  ],
+  "instances": [
+    {
+      "id": "4f9b620d-201c-48c1-bc7f-15e7f1894783",
+      "name": "k8-5te6qkkrhw-1-f7hhovjvdiig-kube-minion-sfrf32nuosv5",
+      "addresses": {
+        "k8snet": [
+          {
+            "macAddr": "fa:16:3e:f4:fa:d2",
+            "version": 4,
+            "addr": "10.1.1.3",
+            "type": "fixed"
+          },
+          {
+            "macAddr": "fa:16:3e:f4:fa:d2",
+            "version": 4,
+            "addr": "192.168.11.243",
+            "type": "floating"
+          }
+        ]
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://192.168.11.182:8774/v2.1/servers/4f9b620d-201c-48c1-bc7f-15e7f1894783"
+        },
+        {
+          "rel": "bookmark",
+          "href": "http://192.168.11.182:8774/servers/4f9b620d-201c-48c1-bc7f-15e7f1894783"
+        }
+      ],
+      "image": {
+        "id": "3a0b6779-1395-4f95-af91-c9870bb5d60d",
+        "links": [
+          {
+            "href": "http://192.168.11.182:8774/images/3a0b6779-1395-4f95-af91-c9870bb5d60d",
+            "rel": "bookmark"
+          }
+        ]
+      },
+      "flavor": {
+        "id": "90204790-9852-4ae3-8f15-b504e062bfef",
+        "ephemeral": 0,
+        "swap": 0,
+        "rxtxFactor": 1.0,
+        "links": [
+          {
+            "rel": "bookmark",
+            "href": "http://192.168.11.182:8774/flavors/90204790-9852-4ae3-8f15-b504e062bfef"
+          }
+        ]
+      },
+      "accessIPv4": "",
+      "accessIPv6": "",
+      "configDrive": "",
+      "status": "ACTIVE",
+      "progress": 0,
+      "tenantId": "1537426455d24c8784dca13936b7c259",
+      "userId": "04a46e69132640779c9154a80b8a4e1a",
+      "keyName": "mykey",
+      "hostId": "258ebbe2fd4bf953fa845393d5fed223cf65784abc8a81669a3cab95",
+      "updated": "Mar 15, 2018 1:07:07 PM",
+      "created": "Mar 15, 2018 1:06:59 PM",
+      "metadata": {},
+      "securityGroups": [
+        {
+          "name": "k8s-gblwvu7pyfkg-secgroup_kube_minion-fmlsxq2zqu7i"
+        }
+      ],
+      "powerState": "1",
+      "vmState": "active",
+      "host": "s200.htxa.com.cn",
+      "instanceName": "instance-00000047",
+      "hypervisorHostname": "s200.htxa.com.cn",
+      "diskConfig": "MANUAL",
+      "availabilityZone": "nova",
+      "launchedAt": "Mar 15, 2018 1:07:07 PM",
+      "osExtendedVolumesAttachedIDs": [
+        "1fdbfc55-6797-4257-913b-b966098482ed"
+      ]
+    },
+    {
+      "id": "4f9b620d-201c-48c1-bc7f-15e7f1894783",
+      "name": "k8-5te6qkkrhw-1-f7hhovjvdiig-kube-minion-sfrf32nuosv5",
+      "addresses": {
+        "k8snet": [
+          {
+            "macAddr": "fa:16:3e:f4:fa:d2",
+            "version": 4,
+            "addr": "10.1.1.3",
+            "type": "fixed"
+          },
+          {
+            "macAddr": "fa:16:3e:f4:fa:d2",
+            "version": 4,
+            "addr": "192.168.11.243",
+            "type": "floating"
+          }
+        ]
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://192.168.11.182:8774/v2.1/servers/4f9b620d-201c-48c1-bc7f-15e7f1894783"
+        },
+        {
+          "rel": "bookmark",
+          "href": "http://192.168.11.182:8774/servers/4f9b620d-201c-48c1-bc7f-15e7f1894783"
+        }
+      ],
+      "image": {
+        "id": "3a0b6779-1395-4f95-af91-c9870bb5d60d",
+        "links": [
+          {
+            "href": "http://192.168.11.182:8774/images/3a0b6779-1395-4f95-af91-c9870bb5d60d",
+            "rel": "bookmark"
+          }
+        ]
+      },
+      "flavor": {
+        "id": "90204790-9852-4ae3-8f15-b504e062bfef",
+        "ephemeral": 0,
+        "swap": 0,
+        "rxtxFactor": 1.0,
+        "links": [
+          {
+            "rel": "bookmark",
+            "href": "http://192.168.11.182:8774/flavors/90204790-9852-4ae3-8f15-b504e062bfef"
+          }
+        ]
+      },
+      "accessIPv4": "",
+      "accessIPv6": "",
+      "configDrive": "",
+      "status": "ACTIVE",
+      "progress": 0,
+      "tenantId": "1537426455d24c8784dca13936b7c259",
+      "userId": "04a46e69132640779c9154a80b8a4e1a",
+      "keyName": "mykey",
+      "hostId": "258ebbe2fd4bf953fa845393d5fed223cf65784abc8a81669a3cab95",
+      "updated": "Mar 15, 2018 1:07:07 PM",
+      "created": "Mar 15, 2018 1:06:59 PM",
+      "metadata": {},
+      "securityGroups": [
+        {
+          "name": "k8s-gblwvu7pyfkg-secgroup_kube_minion-fmlsxq2zqu7i"
+        }
+      ],
+      "powerState": "1",
+      "vmState": "active",
+      "host": "s200.htxa.com.cn",
+      "instanceName": "instance-00000047",
+      "hypervisorHostname": "s200.htxa.com.cn",
+      "diskConfig": "MANUAL",
+      "availabilityZone": "nova",
+      "launchedAt": "Mar 15, 2018 1:07:07 PM",
+      "osExtendedVolumesAttachedIDs": [
+        "1fdbfc55-6797-4257-913b-b966098482ed"
+      ]
+    },
+    {
+      "id": "4f9b620d-201c-48c1-bc7f-15e7f1894783",
+      "name": "k8-5te6qkkrhw-1-f7hhovjvdiig-kube-minion-sfrf32nuosv5",
+      "addresses": {
+        "k8snet": [
+          {
+            "macAddr": "fa:16:3e:f4:fa:d2",
+            "version": 4,
+            "addr": "10.1.1.3",
+            "type": "fixed"
+          },
+          {
+            "macAddr": "fa:16:3e:f4:fa:d2",
+            "version": 4,
+            "addr": "192.168.11.243",
+            "type": "floating"
+          }
+        ]
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://192.168.11.182:8774/v2.1/servers/4f9b620d-201c-48c1-bc7f-15e7f1894783"
+        },
+        {
+          "rel": "bookmark",
+          "href": "http://192.168.11.182:8774/servers/4f9b620d-201c-48c1-bc7f-15e7f1894783"
+        }
+      ],
+      "image": {
+        "id": "3a0b6779-1395-4f95-af91-c9870bb5d60d",
+        "links": [
+          {
+            "href": "http://192.168.11.182:8774/images/3a0b6779-1395-4f95-af91-c9870bb5d60d",
+            "rel": "bookmark"
+          }
+        ]
+      },
+      "flavor": {
+        "id": "90204790-9852-4ae3-8f15-b504e062bfef",
+        "ephemeral": 0,
+        "swap": 0,
+        "rxtxFactor": 1.0,
+        "links": [
+          {
+            "rel": "bookmark",
+            "href": "http://192.168.11.182:8774/flavors/90204790-9852-4ae3-8f15-b504e062bfef"
+          }
+        ]
+      },
+      "accessIPv4": "",
+      "accessIPv6": "",
+      "configDrive": "",
+      "status": "ACTIVE",
+      "progress": 0,
+      "tenantId": "1537426455d24c8784dca13936b7c259",
+      "userId": "04a46e69132640779c9154a80b8a4e1a",
+      "keyName": "mykey",
+      "hostId": "258ebbe2fd4bf953fa845393d5fed223cf65784abc8a81669a3cab95",
+      "updated": "Mar 15, 2018 1:07:07 PM",
+      "created": "Mar 15, 2018 1:06:59 PM",
+      "metadata": {},
+      "securityGroups": [
+        {
+          "name": "k8s-gblwvu7pyfkg-secgroup_kube_minion-fmlsxq2zqu7i"
+        }
+      ],
+      "powerState": "1",
+      "vmState": "active",
+      "host": "s200.htxa.com.cn",
+      "instanceName": "instance-00000047",
+      "hypervisorHostname": "s200.htxa.com.cn",
+      "diskConfig": "MANUAL",
+      "availabilityZone": "nova",
+      "launchedAt": "Mar 15, 2018 1:07:07 PM",
+      "osExtendedVolumesAttachedIDs": [
+        "1fdbfc55-6797-4257-913b-b966098482ed"
+      ]
+    }
+  ],
+  "keypairs": [
+    {
+      "name": "mykey1",
+      "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxxhcp/QOFFA1xZ6XxKsV8HO+PAznkewrIrU8EL4+wv4EZZJSZQtD7M3YkzwfMLMmI9hqTMLH/rE8y4zbOZC6tlC4X4b1YS4Tf5NpqCk2/WXOp//tHEbYLXvMsT0XRmo+w5VibG7qR+UHTokkX6lnxx5ZWEURifrBzNbuplD0vtIEU4cRqFn6kdN0Td6fPD/w5+xhwXJ9o7oCd22khYXUDaEgpk7qhzMa3dW+JysksbvWUeXSaYTI5skNijpzPjH/Xlc+TGofSPybmkz7WiE4i2kj6WN41UV0xtqgsleWoLz5MuutrOVewpcbDrdRCpHIQwOBI+xDiCTOGp6Cu5bGp root@s100.htxa.com.cn\n",
+      "fingerprint": "d8:fe:5e:d9:6b:d3:a3:9a:b1:8a:73:56:2d:af:01:51"
+    },
+    {
+      "name": "mykey2",
+      "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxxhcp/QOFFA1xZ6XxKsV8HO+PAznkewrIrU8EL4+wv4EZZJSZQtD7M3YkzwfMLMmI9hqTMLH/rE8y4zbOZC6tlC4X4b1YS4Tf5NpqCk2/WXOp//tHEbYLXvMsT0XRmo+w5VibG7qR+UHTokkX6lnxx5ZWEURifrBzNbuplD0vtIEU4cRqFn6kdN0Td6fPD/w5+xhwXJ9o7oCd22khYXUDaEgpk7qhzMa3dW+JysksbvWUeXSaYTI5skNijpzPjH/Xlc+TGofSPybmkz7WiE4i2kj6WN41UV0xtqgsleWoLz5MuutrOVewpcbDrdRCpHIQwOBI+xDiCTOGp6Cu5bGp root@s100.htxa.com.cn\n",
+      "fingerprint": "d8:fe:5e:d9:6b:d3:a3:9a:b1:8a:73:56:2d:af:01:52"
+    },
+    {
+      "name": "mykey3",
+      "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxxhcp/QOFFA1xZ6XxKsV8HO+PAznkewrIrU8EL4+wv4EZZJSZQtD7M3YkzwfMLMmI9hqTMLH/rE8y4zbOZC6tlC4X4b1YS4Tf5NpqCk2/WXOp//tHEbYLXvMsT0XRmo+w5VibG7qR+UHTokkX6lnxx5ZWEURifrBzNbuplD0vtIEU4cRqFn6kdN0Td6fPD/w5+xhwXJ9o7oCd22khYXUDaEgpk7qhzMa3dW+JysksbvWUeXSaYTI5skNijpzPjH/Xlc+TGofSPybmkz7WiE4i2kj6WN41UV0xtqgsleWoLz5MuutrOVewpcbDrdRCpHIQwOBI+xDiCTOGp6Cu5bGp root@s100.htxa.com.cn\n",
+      "fingerprint": "d8:fe:5e:d9:6b:d3:a3:9a:b1:8a:73:56:2d:af:01:53"
+    }
+  ],
+  "volumes": [
+    {
+      "id": "33bdf5d8-1f24-4960-b598-9678dc5d3b96",
+      "name": "123",
+      "description": "",
+      "status": "AVAILABLE",
+      "size": 1,
+      "zone": "nova",
+      "created": "Mar 29, 2018 10:01:04 AM",
+      "multiattach": false,
+      "metadata": {
+        "readonly": "False"
+      },
+      "bootable": true,
+      "attachments": [],
+      "imageMetadata": {
+        "checksum": "443b7623e27ecf03dc9e01ee93f67afe",
+        "min_ram": "0",
+        "disk_format": "qcow2",
+        "image_name": "cirros",
+        "image_id": "2a7b7cb3-3334-4674-a5d1-f274dc9b6177",
+        "container_format": "bare",
+        "min_disk": "0",
+        "size": "12716032"
+      },
+      "tenantId": "1537426455d24c8784dca13936b7c259",
+      "encrypted": false,
+      "host": "s200.htxa.com.cn@lvm#LVM"
+    }
+  ],
+  "images": [
+    {
+      "id": "4108ed11-675b-40bc-9aae-518ebf82f32b",
+      "name": "Clean State Snapshot",
+      "diskFormat": "QCOW2",
+      "containerFormat": "BARE",
+      "size": 119078912,
+      "checksum": "37bd3b8a317d3e0cabb486a0356ac9a9",
+      "owner": "1537426455d24c8784dca13936b7c259",
+      "createdAt": "Mar 22, 2018 1:59:24 PM",
+      "updatedAt": "Mar 22, 2018 1:59:27 PM",
+      "status": "ACTIVE",
+      "isPublic": false,
+      "minRam": 0,
+      "minDisk": 10,
+      "isDeleted": false,
+      "isProtected": false,
+      "properties": {
+        "instance_uuid": "6d261f96-5e15-4b9b-9625-b5a2387c32c5",
+        "image_location": "snapshot",
+        "image_state": "available",
+        "user_id": "04a46e69132640779c9154a80b8a4e1a",
+        "image_type": "snapshot",
+        "boot_roles": "admin",
+        "base_image_ref": "2a7b7cb3-3334-4674-a5d1-f274dc9b6177",
+        "owner_id": "1537426455d24c8784dca13936b7c259"
+      }
+    }
+  ],
+  "apis": [
+    {
+      "name": "Volumev2",
+      "url": "http://192.168.11.182:8776/v2/1537426455d24c8784dca13936b7c259"
+    },
+    {
+      "name": "Dns",
+      "url": "http://192.168.11.182:9001/"
+    },
+    {
+      "name": "Volumev3",
+      "url": "http://192.168.11.182:8776/v3/1537426455d24c8784dca13936b7c259"
+    },
+    {
+      "name": "Container Infra",
+      "url": "http://192.168.11.182:9511/v1"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+<app-section-container>
+  <form [formGroup]="form"
+    nz-form
+    class="form-wrapper">
+    <nz-form-item>
+      <nz-form-label [nzSm]="4"
+        [nzXs]="24"
+        nzRequired
+        nzFor="name">
+        名称
+      </nz-form-label>
+      <nz-form-control [nzSm]="10"
+        [nzXs]="24">
+        <input nz-input
+          formControlName="name"
+          id="name">
+        <nz-form-explain>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="4"
+        [nzXs]="24"
+        nzRequired
+        nzFor="name">
+        实例名称
+      </nz-form-label>
+      <nz-form-control [nzSm]="10"
+        [nzXs]="24">
+        <input nz-input
+          formControlName="name"
+          id="name">
+        <nz-form-explain>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="4"
+        [nzXs]="24"
+        nzRequired
+        nzFor="name">
+        实例数量
+      </nz-form-label>
+      <nz-form-control [nzSm]="10"
+        [nzXs]="24">
+        <input nz-input
+          formControlName="name"
+          id="name">
+        <nz-form-explain>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="4"
+        [nzXs]="24"
+        nzRequired
+        nzFor="name">
+        实例类型
+      </nz-form-label>
+      <nz-form-control [nzSm]="18"
+        [nzXs]="24">
+        <nz-table #table
+          [nzShowPagination]="false"
+          nzSize="small"
+          [nzData]="dataSet">
+          <thead>
+            <tr>
+              <th></th>
+              <th>实例类型名称</th>
+              <th>VCPU数量</th>
+              <th>内存</th>
+              <th>根磁盘</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-template ngFor
+              let-data
+              let-i=index
+              [ngForOf]="table.data">
+              <tr>
+                <td>
+                  <input type="radio"
+                    [checked]="i===0"
+                    (change)="onRadioChange(data)"
+                    name="aa">
+                </td>
+                <td>{{data.name}}</td>
+                <td>{{data.vcpu}}</td>
+                <td>{{data.mary}}</td>
+                <td>{{data.disk}}</td>
+              </tr>
+            </ng-template>
+          </tbody>
+        </nz-table>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="4"
+        [nzXs]="24"
+        nzRequired
+        nzFor="name">
+        实例启动源
+      </nz-form-label>
+      <nz-form-control [nzSm]="10"
+        [nzXs]="24">
+        <nz-select formControlName="souces"
+          nzAllowClear
+          nzPlaceHolder="Choose">
+          <nz-option nzValue="1"
+            nzLabel="从镜像启动"></nz-option>
+          <nz-option nzValue="2"
+            nzLabel="从快照启动"></nz-option>
+          <nz-option nzValue="3"
+            nzLabel="从卷启动"></nz-option>
+          <nz-option nzValue="4"
+            nzLabel="从镜像启动(创建一个新卷)"></nz-option>
+          <nz-option nzValue="5"
+            nzLabel="从快照启动(创建一个新卷)"></nz-option>
+        </nz-select>
+        <nz-form-explain>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+    <div [ngSwitch]="form.get('souces').value">
+      <nz-form-item *ngSwitchCase="1">
+        <nz-form-label [nzSm]="4"
+          [nzXs]="24"
+          nzRequired
+          nzFor="name">
+          镜像名称
+        </nz-form-label>
+        <nz-form-control [nzSm]="10"
+          [nzXs]="24">
+          <nz-select nzAllowClear
+            nzPlaceHolder="Choose">
+            <nz-option nzValue="1"
+              nzLabel="a"></nz-option>
+            <nz-option nzValue="2"
+              nzLabel="b"></nz-option>
+            <nz-option nzValue="3"
+              nzLabel="c"></nz-option>
+            <nz-option nzValue="4"
+              nzLabel="d"></nz-option>
+            <nz-option nzValue="5"
+              nzLabel="e"></nz-option>
+          </nz-select>
+          <nz-form-explain>
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item *ngSwitchCase="2">
+        <nz-form-label [nzSm]="4"
+          [nzXs]="24"
+          nzRequired
+          nzFor="name">
+          实例快照
+        </nz-form-label>
+        <nz-form-control [nzSm]="10"
+          [nzXs]="24">
+          <nz-select nzAllowClear
+            nzPlaceHolder="Choose">
+            <nz-option nzValue="1"
+              nzLabel="a"></nz-option>
+            <nz-option nzValue="2"
+              nzLabel="b"></nz-option>
+            <nz-option nzValue="3"
+              nzLabel="c"></nz-option>
+            <nz-option nzValue="4"
+              nzLabel="d"></nz-option>
+            <nz-option nzValue="5"
+              nzLabel="e"></nz-option>
+          </nz-select>
+          <nz-form-explain>
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item *ngSwitchCase="3">
+        <nz-form-label [nzSm]="4"
+          [nzXs]="24"
+          nzRequired
+          nzFor="name">
+          卷
+        </nz-form-label>
+        <nz-form-control [nzSm]="10"
+          [nzXs]="24">
+          <nz-select nzAllowClear
+            nzPlaceHolder="Choose">
+            <nz-option nzValue="1"
+              nzLabel="a"></nz-option>
+            <nz-option nzValue="2"
+              nzLabel="b"></nz-option>
+            <nz-option nzValue="3"
+              nzLabel="c"></nz-option>
+            <nz-option nzValue="4"
+              nzLabel="d"></nz-option>
+            <nz-option nzValue="5"
+              nzLabel="e"></nz-option>
+          </nz-select>
+          <nz-form-explain>
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+  </form>
+  <div class="detials-wrapper">
+    <div class="desc">
+      <span>指定创建实例的详情</span>
+      <br>
+      <span>下面的图表显示了此项目所使用的资源和相关配额</span>
+    </div>
+    <div class="detials">
+      <h4>实例类型详情</h4>
+      <h5>
+        <span>名称：</span>{{selected.name}}
+      </h5>
+      <h5>
+        <span>VCPU数量：</span>{{selected.vcpu}}
+      </h5>
+      <h5>
+        <span>根磁盘：</span>{{selected.disk}}
+      </h5>
+      <h5>
+        <span>临时磁盘：</span>{{selected.disk}}
+      </h5>
+      <h5>
+        <span>磁盘总计：</span>{{selected.disk}}
+      </h5>
+      <h5>
+        <span>内存：</span>{{selected.mary}}
+      </h5>
+    </div>
+    <div class="progress-wrapper">
+      <h4>项目限制</h4>
+      <app-progress class="progress"
+        title="实例数量"
+        desc="使用了"
+        [totle]="10"
+        [value]="6"
+        [newValue]="3">
+      </app-progress>
+      <app-progress class="progress"
+        title="VCPU数量"
+        desc="使用了"
+        [totle]="10"
+        [value]="6"
+        [newValue]="3">
+      </app-progress>
+      <app-progress class="progress"
+        title="内存总计"
+        desc="使用了"
+        [totle]="15"
+        [value]="11"
+        [newValue]="3">
+      </app-progress>
+    </div>
+  </div>
+
+</app-section-container>

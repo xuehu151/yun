@@ -1,0 +1,23 @@
+<app-modal-body>
+  <form class="form-wrapper"
+    nz-form
+    [formGroup]="form">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6"
+        nzFor="name">卷 ID</nz-form-label>
+      <nz-form-control [nzSpan]="16">
+        <nz-select formControlName="volumes"
+          nzPlaceHolder="选择选择一个卷">
+          <nz-option nzValue="33bdf5d8-1f24-4960-b598-9678dc5d3b96"
+            nzLabel="123 (33bdf5d8-1f24-4960-b598-9678dc5d3b96)"></nz-option>
+          <nz-option nzValue="b79f0a82-54c5-41ad-ae8c-c37ca90712ad"
+            nzLabel="k8s-gblwvu7pyfkg-kube_minions-vx5te6qkkrhw-2-vnzcf2fx5uth-docker_volume-hgnyvq3chvq5 (b79f0a82-54c5-41ad-ae8c-c37ca90712ad)"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</app-modal-body>
+<app-modal-footer [disabled]="!form.valid"
+  (ok)="onOk()"
+  (cancel)="onCancel()">
+</app-modal-footer>
